@@ -1,0 +1,139 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap");
+
+:root {
+  --success-color: #2ecc71;
+  --error-color: #e74c3c;
+  --button-coor: #3498db;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #f9fafb;
+  font-family: "open-sans", sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  margin: 0;
+}
+
+.container {
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  width: 400px;
+}
+
+h2 {
+  text-align: center;
+  margin: 0 0 20px;
+  color: var(--button-coor);
+}
+
+.form {
+  padding: 30px 40px;
+}
+
+.form-control {
+  margin-bottom: 10px;
+  padding-bottom: 20px;
+  position: relative;
+}
+
+.form-control label {
+  color: #777;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.form-control input {
+  border: 2px solid #f0f0f0f0;
+  border-radius: 4px;
+  display: block;
+  opacity: 60%;
+  width: 100%;
+  padding: 10px;
+  font-size: 14px;
+}
+
+.form-control input:focus {
+  outline: 0;
+  border-color: #777;
+}
+
+.form-control.success input {
+  border-color: var(--success-color);
+}
+
+.form-control.error input {
+  border-color: var(--error-color);
+}
+
+.form-control small {
+  color: var(--error-color);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  visibility: hidden;
+}
+
+.form-control.error small {
+  visibility: visible;
+}
+
+/* .form button {
+  cursor: pointer;
+  background-color: #3498db;
+  border: 2px solid #3498db;
+  border-radius: 4px;
+  color: white;
+  display: block;
+  font-size: 16px;
+  padding: 10px;
+  margin-top: 20px;
+  width: 100%;
+} */
+
+.form button {
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  /* display: inline-block; */
+  outline: none;
+  border-radius: 5px;
+  z-index: 0;
+  background: #fff;
+  overflow: hidden;
+  border: 2px solid var(--button-coor);
+  color: var(--button-coor);
+  width: 100%;
+  padding: 10px;
+  margin-top: 20px;
+  font-size: 16px;
+}
+.form button:hover {
+  color: #fff;
+}
+.form button:hover:after {
+  width: 100%;
+}
+.form button:after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  transition: all 0.3s ease;
+  left: 0;
+  top: 0;
+  width: 0;
+  height: 100%;
+  background: var(--button-coor);
+}
+
+.form button:hover {
+  transform: scale(0.95);
+}
